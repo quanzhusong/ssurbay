@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>
+            새로운 글 작성하기
+        </title>
+
+        <link rel="stylesheet" type="text/css" href="css/newtopic.css">
+
+    </head>
+
+    <body>
+        <form method="POST" action="/formrecieve">
+            <table align=center>
+                <tr>
+                    <td><label>제목 : </label></td>
+                    <td><input name="title" type = "text" required="required" autocomplete="off" placeholder="제목을 입력하세요"></td>
+                </tr>
+                <tr>
+                    <td><label>내용 : </label></td>
+                    <td><textarea name="text" rows = "5" required="required" autocomplete="off" placeholder="내용을 입력하세요"></textarea></td>
+                </tr>
+                
+                <tr>
+                    <td><label>선택1 : </label></td>
+                    <td><input name="item1" type = "text" required="required" autocomplete="off" placeholder="첫번째 선택지를 입력하세요(필수)"></td>
+                </tr>
+                <tr>
+                    <td><label>선택2 : </label></td>
+                    <td><input name="item2" type = "text" required="required" autocomplete="off" placeholder="두번째 선택지를 입력하세요(필수)"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align=center><button type = "submit">작성하기</button></form> <button onclick = 'movepage("/back")'>뒤로가기</button></td>
+                </tr>
+            </table>
+        <script src= 'scripts/func.js'></script>
+    </body>
+</html>
