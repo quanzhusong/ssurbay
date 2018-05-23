@@ -29,7 +29,7 @@ module.exports = function (app, client, topicinfo) {
     });
 
     app.get('/newtopic', function (req, res) {
-        res.render('newtopic', {});
+        res.render('newtopic', {});//send('<script> alert ("hello")</script>').
     });
 
     app.get('/delete', function(req,res){//시험용
@@ -85,7 +85,7 @@ module.exports = function (app, client, topicinfo) {
         });
     });
 
-    var mytopic;
+    let mytopic;
     var selected;
 
     app.get('/mypage',function(req,res){
@@ -107,6 +107,7 @@ module.exports = function (app, client, topicinfo) {
     app.post('/mypage', function(req,res){
         
         selected = req.body.selected;
+        
         res.render('mypage', {
             mytopic: mytopic,
             selected: selected
@@ -119,7 +120,10 @@ module.exports = function (app, client, topicinfo) {
 
         client.query('update topic set selected = ? where number = ?',[decision, number]);
         res.redirect('/mypage');
-    })
+
+            //res.redirect('/');
+        
+    });
 };
 
 
